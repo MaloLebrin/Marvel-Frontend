@@ -1,0 +1,43 @@
+.search {
+    animation: 4s appear;
+
+    form {
+        width: 60vw;
+        margin: auto;
+        background-color: white;
+        padding: 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        border: none;
+        margin-bottom: 40px;
+        &:hover {
+            width: 65vw;
+            background-color: #ef151e;
+            input {
+                width: calc(60vw - 20px - 10px);
+                background-color: white;
+                &::placeholder {
+                    color: #ef151e;
+                }
+            }
+        }
+        input {
+            width: calc(55vw - 40px - 20px);
+            margin: auto;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            outline: none;
+            border: none;
+            color: white;
+            background-color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+}
