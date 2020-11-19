@@ -1,0 +1,100 @@
+#OneCharacterPage {
+    margin-top: 25px;
+    background-color: black;
+    color: white;
+    h1 {
+        text-align: center;
+        font-size: 38px;
+        span {
+            color: #ef151e;
+        }
+        &:hover {
+            color: #ef151e;
+            span {
+                color: white;
+            }
+        }
+    }
+    .container {
+        width: 80vw;
+        height: auto;
+        min-height: 50vh;
+        margin: 60px auto;
+        padding: 40px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.358);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .content-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 5rem;
+            img {
+                width: 300px;
+                height: 350px;
+                object-fit: cover;
+                border: 3px solid #ef151e;
+                margin: auto;
+            }
+            p {
+                margin: auto;
+                padding: 0 40px;
+                font-size: 20px;
+                line-height: 1.4;
+
+                span {
+                    color: #ef151e;
+                    font-size: 24px;
+                }
+            }
+        }
+        .items-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .card-comics-wrapper {
+                justify-content: center;
+                width: 100%;
+                margin: 50px auto;
+                display: flex;
+                .card-comics-content {
+                    width: 100%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                }
+                img {
+                    width: 20rem;
+                    border: 3px solid #ef151e;
+                }
+                .card-comics-content-text {
+                    width: 100%;
+                    border: 3px solid #ef151e;
+
+                    .card-comics-avatar-name {
+                        font-size: 24px;
+                        letter-spacing: 3px;
+                        margin: 10px 10px;
+                        text-transform: uppercase;
+                        color: white;
+                        background-color: rgba(0, 0, 0, 0.7);
+                        height: 35px;
+                        font-weight: bold;
+                    }
+                    .description {
+                        background-color: rgba(0, 0, 0, 0.7);
+                        overflow: hidden;
+                        margin: 10px 10px;
+                        font-size: 18px;
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }
+    }
+}

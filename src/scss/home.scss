@@ -51,6 +51,7 @@
                         position: absolute;
                         display: flex;
                         align-items: center;
+                        justify-content: flex-end;
                         flex-direction: column;
 
                         .card-avatar-name {
@@ -68,10 +69,12 @@
                         }
                         .description {
                             background-color: rgba(0, 0, 0, 0.7);
-                            padding: 10px;
-                            height: calc(250px - 15px);
+                            max-height: 0;
+                            border-top: 5px solid #ef151e;
                             width: 250px;
-                            transition: visible 2s ease-in-out;
+                            overflow: hidden;
+                            transition: max-height 2s,
+                                background-color 2s ease-in-out;
 
                             &.hide {
                                 z-index: -1;
@@ -80,6 +83,8 @@
                             &.visible {
                                 display: block;
                                 color: white;
+                                background-color: rgba(0, 0, 0, 1);
+                                max-height: calc(250px - 15px);
                             }
                         }
                     }

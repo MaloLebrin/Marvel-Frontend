@@ -1,9 +1,10 @@
-#one-character {
+#Comics {
     background-color: black;
     color: white;
     h1 {
         text-align: center;
         font-size: 38px;
+        transition: color 2s linear;
         &:hover {
             color: #ef151e;
         }
@@ -20,10 +21,15 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        .total-comics {
+            margin-bottom: 2rem;
+            color: #ef151e;
+        }
         .items-list {
             display: flex;
             flex-wrap: wrap;
             .card-wrapper {
+                border: 3px solid #ef151e;
                 width: 250px;
                 height: 250px;
                 justify-content: center;

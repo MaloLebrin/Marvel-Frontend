@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, Link } from "react-router-dom";
 import Loader from "../loader/Loader"
 
-const CardOffer = ({ data, description, name, id, thumbnail }) => {
+const Card = ({ data, description, name, id, thumbnail }) => {
     const [descriptionOnHover, setDescriptionOnHover] = useState("hide");
     const history = useHistory()
     const showDescription = (event) => {
@@ -27,4 +27,4 @@ const CardOffer = ({ data, description, name, id, thumbnail }) => {
         : (<Loader />)
 }
 
-export default CardOffer
+export default Card;

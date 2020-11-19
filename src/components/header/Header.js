@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../logo/Logo";
 import "../../scss/HeaderFooter.scss";
 
-const Header = ({ setLoginModal }) => {
+const Header = ({ token, setUserToken }) => {
+    const history = useHistory()
     return (
         <header id="Header">
             <div className="header-wrapper">
@@ -25,14 +26,22 @@ const Header = ({ setLoginModal }) => {
                         </li>
                     </ul>
                 </nav>
-                <div className="login">
-                    <button
-                        className="redButton"
-                    // onClick={() => setLoginModal("loginVisible")}
-                    >
-                        Login
-          </button>
-                </div>
+                {token ? (<button onClick={() => {
+                    setUserToken(null);
+                }} className="button logout">Se Déconnecter</button>
+                ) : (
+                        <div className="login">
+                            <button
+                                className="redButton"
+                                onClick={() => history.push('/login')}
+                            >
+                                Login
+                    </button>
+                            <button className="signup"
+                                onClick={() => history.push("/signup")}>
+                                Signup
+                    </button>
+                        </div>)}
             </div>
         </header>
     );

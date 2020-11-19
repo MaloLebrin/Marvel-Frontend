@@ -12,12 +12,15 @@
         border-radius: 100px;
         border: none;
         margin-bottom: 40px;
+        transition: color 2s linear;
+
         &:hover {
             width: 65vw;
             background-color: #ef151e;
             input {
                 width: calc(60vw - 20px - 10px);
                 background-color: white;
+                transition: color 2s linear;
                 &::placeholder {
                     color: #ef151e;
                 }

@@ -1,0 +1,56 @@
+#signupLoginPage {
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    .title-signup {
+        text-align: center;
+    }
+    .signup-form {
+        display: flex;
+        width: 275px;
+        margin: auto;
+        flex-direction: column;
+        input::placeholder {
+            color: #cbcccd;
+            font-size: 16px;
+        }
+        input {
+            border: none;
+            border-bottom: 1px solid #fcced3;
+            border-radius: 5px;
+            height: 35px;
+            margin-bottom: 20px;
+        }
+        .signup-login-error-message {
+            color: red;
+            font-size: 9px;
+        }
+
+        button {
+            background-color: #ef151e;
+            height: 45px;
+            width: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+            font-weight: bold;
+            &:hover {
+                background-color: white;
+                color: #ef151e;
+            }
+        }
+    }
+
+    .signup-login-link {
+        margin-top: 10px;
+        color: #ef151e;
+        font-size: 14px;
+    }
+}
