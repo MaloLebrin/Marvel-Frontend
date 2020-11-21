@@ -10,7 +10,7 @@ const Favorites = ({ token }) => {
     const [data, setData] = useState([]);
     useEffect(() => {
         const fetData = async () => {
-            const response = await axios.get(`http://localhost:3001/user/allFavs`,
+            const response = await axios.get(`https://marvelapibackend.herokuapp.com/user/allFavs`,
                 {
                     headers: {
                         authorization: "Bearer " + token,

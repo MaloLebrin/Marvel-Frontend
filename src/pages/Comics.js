@@ -27,7 +27,7 @@ const Comics = ({ token }) => {
                 keyWords = `&name=${search}`
             }
             const response = await axios.get(
-                `http://localhost:3001/comics??limit=25&offset=${resultPage}${keyWords}`
+                `https://marvelapibackend.herokuapp.com/comics??limit=25&offset=${resultPage}${keyWords}`
                 // `http://localhost:3001/character/:id=${id}`
             )
             setData(response.data)

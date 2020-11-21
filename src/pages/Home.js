@@ -25,7 +25,7 @@ const Home = ({ token }) => {
             } else {
 
             }
-            const response = await axios.get(`http://localhost:3001/characters?limit=${limit}${keyWords}`)
+            const response = await axios.get(`https://marvelapibackend.herokuapp.com/characters?limit=${limit}${keyWords}`)
             console.log(response);
             setData(response.data)
             setIsLoading(false)

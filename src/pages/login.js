@@ -16,7 +16,7 @@ const Login = ({ token, setUserToken }) => {
         try {
             event.preventDefault();
             const response = await axios.post(
-                "http://localhost:3001/user/login",
+                "https://marvelapibackend.herokuapp.com/user/login",
                 {
                     email: email,
                     password: password,

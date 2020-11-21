@@ -14,7 +14,9 @@ const Signup = ({ setUserToken }) => {
         try {
             event.preventDefault();
             const response = await axios.post(
-                "http://localhost:3001/user/signup",
+                // "http://localhost:3001/user/signup",
+
+                "https://marvelapibackend.herokuapp.com/user/signup",
                 {
                     email: email,
                     password: password,

@@ -15,10 +15,10 @@ const OneCharacter = () => {
     console.log(comicsData);
     useEffect(() => {
         const fetData = async () => {
-            const response = await axios.get(`http://localhost:3001/character/${id}`)
+            const response = await axios.get(`https://marvelapibackend.herokuapp.com/character/${id}`)
             setData(response.data)
             // console.log(data);
-            const responseComics = await axios.get(`http://localhost:3001/character/${id}/comics`)
+            const responseComics = await axios.get(`https://marvelapibackend.herokuapp.com/character/${id}/comics`)
             setComicsData(responseComics.data)
             comicsData ? setIsLoading(false) : setIsLoading(true);
             setIsLoading(false)

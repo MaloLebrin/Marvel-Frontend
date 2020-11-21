@@ -17,8 +17,7 @@ const Favory = ({ token, data }) => {
                 category = null
             }
             const response = await axios.post(
-                // `http://localhost:3001/user/addFav?idMarvel=${idMarvel}&title=${title}&category=${category}&image=${image}&description=${description}`,
-                `http://localhost:3001/user/addFav`,
+                `https://marvelapibackend.herokuapp.com/user/addFav`,
                 {
                     idMarvel: idMarvel,
                     title: title,
