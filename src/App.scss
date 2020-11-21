@@ -51,7 +51,7 @@
     }
 
     #Loader {
-        width: 80vw;
+        width: 100vw;
         height: 50vh;
         min-height: 50vh;
         margin: 60px auto;
@@ -63,14 +63,18 @@
         align-items: center;
         flex-direction: column;
         .loader-image {
-            width: 150px;
+            width: 100%;
             display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             pointer-events: none;
-            animation: App-logo-spin infinite 3s linear;
+            // animation: App-logo-spin infinite 3s linear;
             img {
-                width: 100%;
+                width: 100px;
+                margin: auto;
+                animation: App-logo-spin infinite 3s linear;
             }
         }
         @keyframes App-logo-spin {
