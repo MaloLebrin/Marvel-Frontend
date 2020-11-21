@@ -7,7 +7,7 @@ import Pagination from "react-js-pagination";
 
 import Loader from "../components/loader/Loader"
 
-const Home = () => {
+const Home = ({ token }) => {
     const [isLoading, setIsLoading] = useState(true)
     const [search, setSearch] = useState("");
     const [data, setData] = useState([]);
@@ -17,22 +17,26 @@ const Home = () => {
     const pageRange = 5;
 
     const limit = 100;
-
     useEffect(() => {
         const fetData = async () => {
-            const response = await axios.get(`http://localhost:3001/characters?limit=${limit}&orderBy=name`)
+            let keyWords = ""
+            if (search.length > 0) {
+                keyWords = `&name=${search}`
+            } else {
+
+            }
+            const response = await axios.get(`http://localhost:3001/characters?limit=${limit}${keyWords}`)
+            console.log(response);
             setData(response.data)
-            console.log(data);
             setIsLoading(false)
         };
         fetData();
-    }, [resultPage])
+    }, [resultPage, search])
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber)
         setResultPage(resultPage + 100)
     }
-
     return isLoading ? (<Loader />) : (
         <main id="HomePage">
             <Search search={search} setSearch={setSearch} />
@@ -49,6 +53,7 @@ const Home = () => {
                                 id={item.id}
                                 key={id}
                                 data={item}
+                                token={token}
                             ></Card>
                         );
                     })}

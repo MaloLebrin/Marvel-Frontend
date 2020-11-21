@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <Router>
-      <Header />
+      <Header token={token} setUserToken={setUserToken} />
       <Switch>
         <Route path="/favs">
           <Favorites token={token} />
@@ -42,13 +42,13 @@ const App = () => {
           <Login setUserToken={setUserToken} />
         </Route>
         <Route path="/character/:id">
-          <OneCharacter />
+          <OneCharacter token={token} />
         </Route>
         <Route path="/comics">
-          <Comics />
+          <Comics token={token} />
         </Route>
         <Route path="/" >
-          <Home />
+          <Home token={token} />
         </Route>
       </Switch>
       <Footer />

@@ -1,8 +1,12 @@
 #HomePage {
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h1 {
         text-align: center;
+        margin: 30px 0;
         font-size: 38px;
         &:hover {
             color: #ef151e;
@@ -24,8 +28,8 @@
             display: flex;
             flex-wrap: wrap;
             .card-wrapper {
-                width: 250px;
-                height: 250px;
+                width: 270px;
+                height: 270px;
                 justify-content: center;
                 align-items: center;
                 object-fit: cover;
@@ -33,11 +37,43 @@
                 margin: auto;
                 margin-bottom: 25px;
                 cursor: pointer;
+                &:hover {
+                    border: 5px solid#ef151e;
+                }
                 .card-img {
                     width: 100%;
                     height: 100%;
                     position: relative;
                     z-index: 2;
+
+                    .favory-wrapper {
+                        z-index: 4;
+                        background-color: transparent;
+                        position: absolute;
+                        top: 4px;
+                        right: 2px;
+                        button {
+                            border: none;
+                            background-color: transparent;
+                            cursor: pointer;
+                            width: 100%;
+                            svg {
+                                background-color: transparent;
+                                color: white;
+                                height: 25px;
+                                width: 25px;
+                                transition: color 1s ease-in-out;
+                                &:hover {
+                                    color: #ef151e;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                                &.active {
+                                    color: #ef151e;
+                                }
+                            }
+                        }
+                    }
                     img {
                         overflow: hidden;
                         object-fit: cover;
@@ -62,7 +98,7 @@
                             color: white;
                             background-color: rgba(0, 0, 0, 0.7);
                             border-bottom: 5px solid #ef151e;
-                            width: 250px;
+                            width: 100%;
                             height: 35px;
                             text-align: center;
                             font-weight: bold;
@@ -70,18 +106,27 @@
                         .description {
                             background-color: rgba(0, 0, 0, 0.7);
                             max-height: 0;
-                            border-top: 5px solid #ef151e;
-                            width: 250px;
+                            // width: 100%;
+                            width: 270px;
+                            height: 270px;
                             overflow: hidden;
                             transition: max-height 2s,
                                 background-color 2s ease-in-out;
+                            position: absolute;
+                            bottom: -200px;
+                            top: 0;
+                            z-index: 88;
 
                             &.hide {
                                 z-index: -1;
                                 color: black;
                             }
                             &.visible {
+                                border-top: 5px solid #ef151e;
+                                padding: 5px;
                                 display: block;
+                                text-align: justify;
+                                line-height: 1.2;
                                 color: white;
                                 background-color: rgba(0, 0, 0, 1);
                                 max-height: calc(250px - 15px);

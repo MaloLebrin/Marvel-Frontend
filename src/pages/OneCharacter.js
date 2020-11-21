@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import axios from "axios"
 import "../scss/OneCharacter.scss"
 import CardComics from "../components/card-comics/CardComics"
-import Pagination from "react-js-pagination";
 
 import Loader from "../components/loader/Loader"
 
@@ -12,10 +11,6 @@ const OneCharacter = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState([]);
     const [comicsData, setComicsData] = useState()
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [resultPage, setResultPage] = useState(0)
-    // const recordPerPage = 100;
-    // const pageRange = 5;
     const { id } = useParams();
     console.log(comicsData);
     useEffect(() => {

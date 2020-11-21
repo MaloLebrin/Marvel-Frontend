@@ -1,46 +1,114 @@
+// .search {
+//     animation: 4s appear;
+
+//     form {
+//         width: 60vw;
+//         margin: auto;
+//         background-color: white;
+//         padding: 12px 0;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 100px;
+//         border: none;
+//         margin-bottom: 40px;
+//         transition: color 2s linear;
+
+//         // &:hover {
+//         //     width: 65vw;
+//         //     background-color: #ef151e;
+//         input {
+//             width: calc(60vw - 20px - 10px);
+//             background-color: white;
+//             transition: color 2s linear;
+//             // &::placeholder {
+//             //     color: #ef151e;
+//             // }
+//         }
+//         // }
+//         input {
+//             width: calc(55vw - 40px - 20px);
+//             margin: auto;
+//             border-radius: 8px;
+//             padding: 10px;
+//             margin: 10px;
+//             outline: none;
+//             border: none;
+//             color: white;
+//             background-color: black;
+//             font-weight: bold;
+//             text-transform: uppercase;
+//             &::placeholder {
+//                 color: white;
+//             }
+//         }
+//     }
+// }
 .search {
-    animation: 4s appear;
-
-    form {
-        width: 60vw;
-        margin: auto;
-        background-color: white;
-        padding: 12px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
+    width: 20px;
+    background-color: white;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+        -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+    &:hover {
+        width: 400px;
+    }
+    input {
+        background-color: transparent;
         border: none;
-        margin-bottom: 40px;
-        transition: color 2s linear;
-
-        &:hover {
-            width: 65vw;
-            background-color: #ef151e;
-            input {
-                width: calc(60vw - 20px - 10px);
-                background-color: white;
-                transition: color 2s linear;
-                &::placeholder {
-                    color: #ef151e;
-                }
-            }
-        }
-        input {
-            width: calc(55vw - 40px - 20px);
-            margin: auto;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px;
-            outline: none;
-            border: none;
-            color: white;
-            background-color: black;
-            font-weight: bold;
-            text-transform: uppercase;
-            &::placeholder {
-                color: white;
+        outline: none;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        bottom: 0;
+        margin-left: 12px;
+        font-weight: 500;
+        font-size: 16px;
+        transition: 0.8;
+        &::placeholder {
+            color: transparent;
+            &:hover {
+                color: black;
             }
         }
     }
+    a {
+        color: #ef151e;
+        width: 100%;
+        img {
+            color: #ef151e;
+            position: absolute;
+            top: 16px;
+            left: 5px;
+            width: 18px;
+        }
+    }
+}
+@keyframes hoverShake {
+    0% {
+        transform: skew(0deg, 0deg, 0deg);
+    }
+    25% {
+        transform: skew(5deg, 5deg);
+    }
+    75% {
+        transform: skew(-5deg, -5deg);
+    }
+    100% {
+        transform: skew(0deg, 0deg);
+    }
+}
+.search:hover {
+    animation: hoverShake 0.15s linear 3;
 }
