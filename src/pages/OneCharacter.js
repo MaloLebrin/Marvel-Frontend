@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import axios from "axios"
 import "../scss/OneCharacter.scss"
 import CardComics from "../components/card-comics/CardComics"
-
 import Loader from "../components/loader/Loader"
 
 const OneCharacter = () => {
@@ -12,7 +10,6 @@ const OneCharacter = () => {
     const [data, setData] = useState([]);
     const [comicsData, setComicsData] = useState()
     const { id } = useParams();
-    console.log(comicsData);
     useEffect(() => {
         const fetData = async () => {
             const response = await axios.get(`https://marvelapibackend.herokuapp.com/character/${id}`)
@@ -27,6 +24,7 @@ const OneCharacter = () => {
     }, [])
     const Data = isLoading ? null : data.data.results[0];
     const ComicsDATA = isLoading ? null : comicsData.data.results;
+    console.log(ComicsDATA);
     return isLoading ? (<Loader />) : (
         <main id="OneCharacterPage">
             <h1>Discover <span>{Data.name}</span> our new super Hero</h1>

@@ -14,7 +14,9 @@ const CardComics = ({ prospData, description, name, id, thumbnail }) => {
                 <div className="card-comics-content-text">
                     <p className="card-comics-avatar-name">{name}</p>
                     <p className="description">{description}</p>
-                    <p><span>Book length : {prospData.pageCount}</span></p>
+                    <p className="infos"><span>Book length : {prospData.pageCount}</span>
+                        <span>Price : {prospData.prices[0].price} €</span>
+                    </p>
                 </div>
             </div>
         </div>)
