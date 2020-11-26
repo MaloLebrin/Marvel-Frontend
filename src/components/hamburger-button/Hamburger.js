@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "../../scss/Hamburger.scss"
 const Hamburger = ({ Open, setOpen }) => {
     return (
